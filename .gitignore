@@ -1,0 +1,32 @@
+# macOS system files
+.DS_Store
+
+# Xcode build files
+build/
+DerivedData/
+
+# Xcode user-specific files
+xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+
+# Xcode workspace data
+*.xcworkspace/xcuserdata
+
+# Swift Package Manager
+.swiftpm/
+.build/
+Package.resolved
+
+# Archives & temporary
+*.xcarchive
+*.moved-aside
+*.swp
+*.tmp
+*.bak
+*.lock
+*.orig
+
+# Firebase (optional — only if used)
+GoogleService-Info.plist
