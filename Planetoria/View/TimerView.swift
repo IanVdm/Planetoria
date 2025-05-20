@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TimerView: View {
     var progress: Double
+    @State private var showSettings = false
     
     var body: some View {
         VStack {
@@ -29,7 +30,7 @@ struct TimerView: View {
                     .rotationEffect(.degrees(-90))  // start from top
                     .animation(.linear, value: progress)
                 
-                // Percentage Text
+                // Center Image
                 Image("Planet")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -60,10 +61,15 @@ struct TimerView: View {
             
             Button(action: {
                 // Excute timer settings
+                showSettings.toggle()
             }, label: {
                 Image(systemName: "gearshape")
                 Text("Settings")
             })
+            
+            if showSettings {
+                SettingsView()
+            }
             
             Spacer()
             
