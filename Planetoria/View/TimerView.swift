@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TimerView: View {
+    @StateObject private var viewModel = TimerViewModel()
     var progress: Double
     @State private var showSettings = false
     
@@ -24,11 +25,11 @@ struct TimerView: View {
                 
                 // Progress Circle
                 Circle()
-                    .trim(from: 0, to: progress)    // show part of the circle
+                    .trim(from: 0, to: CGFloat(viewModel.progress))
                     .stroke(style: StrokeStyle(lineWidth: 30, lineCap: .round))
                     .foregroundColor(.black)
-                    .rotationEffect(.degrees(-90))  // start from top
-                    .animation(.linear, value: progress)
+                    .rotationEffect(.degrees(-90))
+                    .animation(.linear, value: viewModel.progress)
                 
                 // Center Image
                 Image("Planet")
@@ -41,15 +42,17 @@ struct TimerView: View {
             
             Spacer()
             
-            Text("00:00")
+            // Timer
+            Text(viewModel.formattedTime)
                 .font(.system(size: 80))
             
             Spacer()
             
             Button( action: {
                 // Execute timer start
+                viewModel.startTimer()
             }, label: {
-                Text("Start")
+                Text(viewModel.isRunning ? "Stop" : "Start")
                     .font(.title)
                     .foregroundStyle(Color.white)
                     .padding()
