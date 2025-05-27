@@ -24,12 +24,8 @@ struct DiscoveryDetailView: View {
                         .padding(.top, 30)
                         .padding(.bottom, 5)
                     
-                    if planet.isFavorite {
-                        Image(systemName: "star.fill")
-                            .font(.system(size: 40))
-                            .foregroundStyle(.yellow)
-                            .offset(x: 10, y: 14)
-                    }
+                    isFavorite(isSet: planet.isFavorite)
+                        .offset(x: 10, y: 14)
                 }
                 
                 
