@@ -21,7 +21,7 @@ struct DiscoveryItemView: View {
                     .resizable()
                     .frame(width: 95, height: 95)
                     .padding()
-               
+                
                 Text(planet.name)
                    .font(.system(size: 20))
                    .foregroundStyle(.white)

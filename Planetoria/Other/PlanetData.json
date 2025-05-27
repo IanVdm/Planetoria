@@ -42,7 +42,7 @@
         "name": "Mercury",
         "category": "Planet",
         "description": "Mercury",
-        "isFavorite": true,
+        "isFavorite": false,
         "distanceFromTheSun": {
             "millionKm": 227.9
         },
@@ -80,7 +80,7 @@
         "name": "Venus",
         "category": "Planet",
         "description": "",
-        "isFavorite": true,
+        "isFavorite": false,
         "distanceFromTheSun": {
             "millionKm": 227.9
         },
@@ -99,7 +99,7 @@
         "name": "The Moon",
         "category": "Moon",
         "description": "The Moon, is Earth's one and only moon",
-        "isFavorite": true,
+        "isFavorite": false,
         "distanceFromTheSun": {
             "millionKm": 227.9
         },

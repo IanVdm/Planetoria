@@ -9,23 +9,29 @@ import SwiftUI
 
 struct DiscoveriesView: View {
     let catalogue = [
-        GridItem(.flexible(minimum: 10, maximum: 155)),
-        GridItem(.flexible(minimum: 10, maximum: 155))
+        GridItem(.flexible(minimum: 100, maximum: 155)),
+        GridItem(.flexible(minimum: 100, maximum: 155))
     ]
     
     var body: some View {
-        Text("Discoveries")
-            .font(.system(size: 40))
-            .padding(.top, 20)
-        
         // TODO: Create Discovery itmes
-        ScrollView {
-            LazyVGrid(columns: catalogue, spacing: 16) {
-                ForEach(planets) { item in
-                    DiscoveryItemView(planet: item)
+        NavigationSplitView {
+            ScrollView {
+                LazyVGrid(columns: catalogue, spacing: 16) {
+                    ForEach(planets) { item in
+                        NavigationLink {
+                            DiscoveryDetailView(planet: item)
+                        } label: {
+                            DiscoveryItemView(planet: item)
+                        }
+                        .buttonStyle(.plain)
+                    }
                 }
+                .navigationTitle("Discoveries")
+                .padding()
             }
-            .padding()
+        } detail: {
+            Text("Select a planet to discover")
         }
         
         Spacer()
