@@ -56,5 +56,82 @@
         },
         "ImageName": "Planet2"
     },
+    {
+        "id": 1004,
+        "name": "Earth",
+        "category": "Planet",
+        "description": "Earth, the planet home the human civilization",
+        "isFavorite": true,
+        "distanceFromTheSun": {
+            "millionKm": 227.9
+        },
+        "diameterKm": 6779,
+        "lengthOfDayHours": 24.6,
+        "numberOfMoons": 2,
+        "notableFeatures": "Only planet consisting of human life forms",
+        "coordinates": {
+            "orbitalLongitude": 49.558,
+            "orbitalInclination": 1.850
+        },
+        "ImageName": "Planet9"
+    },
+    {
+        "id": 1005,
+        "name": "Venus",
+        "category": "Planet",
+        "description": "",
+        "isFavorite": true,
+        "distanceFromTheSun": {
+            "millionKm": 227.9
+        },
+        "diameterKm": 6779,
+        "lengthOfDayHours": 24.6,
+        "numberOfMoons": 2,
+        "notableFeatures": "A day on Venus is longer than its year",
+        "coordinates": {
+            "orbitalLongitude": 49.558,
+            "orbitalInclination": 1.850
+        },
+        "ImageName": "Planet3"
+    },
+    {
+        "id": 1006,
+        "name": "The Moon",
+        "category": "Moon",
+        "description": "The Moon, is Earth's one and only moon",
+        "isFavorite": true,
+        "distanceFromTheSun": {
+            "millionKm": 227.9
+        },
+        "diameterKm": 6779,
+        "lengthOfDayHours": 24.6,
+        "numberOfMoons": 2,
+        "notableFeatures": "The Moon is slowly moving away from Earth",
+        "coordinates": {
+            "orbitalLongitude": 49.558,
+            "orbitalInclination": 1.850
+        },
+        "ImageName": "Planet8"
+    },
+    {
+        "id": 1007,
+        "name": "Gnomia",
+        "category": "Planet",
+        "description": "Gnomia is home to race of the Gnomes, they are know to for traveling to Earth and decorating humans gardens.",
+        "isFavorite": true,
+        "distanceFromTheSun": {
+            "millionKm": 227.9
+        },
+        "diameterKm": 6779,
+        "lengthOfDayHours": 24.6,
+        "numberOfMoons": 2,
+        "notableFeatures": "Gnomes are no bigger than 30cm tall",
+        "coordinates": {
+            "orbitalLongitude": 49.558,
+            "orbitalInclination": 1.850
+        },
+        "ImageName": "Planet5"
+    },
+    
 ]
 
