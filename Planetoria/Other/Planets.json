@@ -1,0 +1,40 @@
+[
+    {
+        "name": "Mars",
+        "category": "Planet",
+        "id": 1001,
+        "isFavorite": true,
+        "description": "Mars, offten refferd to as the red planet.",
+        "distanceFromTheSun": {
+            "millionKm": 227.9
+        },
+        "diameterKm": 6779,
+        "lengthOfDayHours": 24.6,
+        "numberOfMoons": 2,
+        "notableFeatures": "Largest volcano in the Solar System (Olympus Mons)",
+        "coordinates": {
+            "orbitalLongitude": 49.558,
+            "orbitalInclination": 1.850
+        },
+        "ImageName": "Planet7"
+    },
+    {
+        "name": "Pluto",
+        "category": "Planet",
+        "id": 1001,
+        "isFavorite": true,
+        "description": "Pluto, also known as the dwarf planet",
+        "distanceFromTheSun": {
+            "millionKm": 227.9
+        },
+        "diameterKm": 6779,
+        "lengthOfDayHours": 24.6,
+        "numberOfMoons": 2,
+        "notableFeatures": "Largest volcano in the Solar System (Olympus Mons)",
+        "coordinates": {
+            "orbitalLongitude": 49.558,
+            "orbitalInclination": 1.850
+        },
+        "ImageName": "Planet6"
+    },
+]
