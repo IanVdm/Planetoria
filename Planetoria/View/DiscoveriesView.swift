@@ -21,9 +21,9 @@ struct DiscoveriesView: View {
         // TODO: Create Discovery itmes
         ScrollView {
             LazyVGrid(columns: catalogue, spacing: 16) {
-//                DiscoveryItemView(planet: planets[0])
-//                DiscoveryItemView()
-//                DiscoveryItemView()
+                ForEach(planets) { item in
+                    DiscoveryItemView(planet: item)
+                }
             }
             .padding()
         }

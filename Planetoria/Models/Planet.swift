@@ -8,11 +8,11 @@
 import Foundation
 import SwiftUI
 
-struct Planet: Hashable, Codable {
+struct Planet: Hashable, Codable, Identifiable {
     var id: Int
     var name: String
+    var category: String
     var description: String
-    var notebaleFeature: String
     var isFavorite: Bool
     
     private var ImageName: String

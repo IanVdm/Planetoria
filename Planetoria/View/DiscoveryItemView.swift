@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DiscoveryItemView: View {
+    var planet: Planet
+    
     var body: some View {
         ZStack {
             Rectangle()
@@ -15,12 +17,12 @@ struct DiscoveryItemView: View {
                 .cornerRadius(20)
     
             VStack {
-                Image("Planet5")
+                planet.image
                     .resizable()
                     .frame(width: 95, height: 95)
                     .padding()
                
-               Text("Planet 1")
+                Text(planet.name)
                    .font(.system(size: 20))
                    .foregroundStyle(.white)
             }
@@ -29,5 +31,5 @@ struct DiscoveryItemView: View {
 }
 
 #Preview {
-    DiscoveryItemView()
+    DiscoveryItemView(planet: planets[0])
 }

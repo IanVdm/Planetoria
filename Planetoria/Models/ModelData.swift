@@ -7,7 +7,7 @@
 
 import Foundation
 
-var planets: [Planet] = load("Planets.json")
+var planets: [Planet] = load("PlanetData.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
