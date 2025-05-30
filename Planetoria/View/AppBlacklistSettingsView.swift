@@ -15,38 +15,51 @@ struct AppBlacklistSettingsView: View {
         VStack {
             Text("Instagram")
                 .font(.system(size: 40))
+                .padding()
             
             HStack {
                 Toggle("Timers", isOn: $isTimer)
                     .padding(.horizontal, 50)
                     .tint(.black)
             }
+            .padding(.vertical, 20)
             
             ZStack {
                 Rectangle()
                     .frame(width: 302, height: 120)
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(.white)
                     .cornerRadius(20)
+                    .shadow(color: .black.opacity(0.3), radius: 10, x: 5, y: 5)
                 
                 VStack {
-                    Text("Set start time")
-                    Text("11:00am")
+                    Text("Set Start time")
+                        .padding(.bottom, 1)
+                    HStack {
+                        Text("11:00")
+                            .font(.system(size: 40))
+                        Text("am")
+                    }
                 }
             }
-            .padding()
             
             ZStack {
                 Rectangle()
                     .frame(width: 302, height: 120)
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(.white)
                     .cornerRadius(20)
+                    .shadow(color: .black.opacity(0.3), radius: 10, x: 5, y: 5)
                 
                 VStack {
-                    Text("Set start time")
-                    Text("11:00am")
+                    Text("Set end time")
+                        .padding(.bottom, 1)
+                    HStack {
+                        Text("17:00")
+                            .font(.system(size: 40))
+                        Text("pm")
+                    }
                 }
             }
-            .padding()
+            .padding(.bottom, 50)
             
             Toggle("Repeat", isOn: $isRepeat)
                 .padding(.horizontal, 50)
@@ -97,6 +110,28 @@ struct AppBlacklistSettingsView: View {
             }
             .padding()
             .buttonStyle(.plain)
+        }
+        
+        Spacer()
+        
+        ZStack {
+            Rectangle()
+                .fill(Color.black)
+                .frame(width: 380, height: 70)
+                .cornerRadius(30)
+            
+            HStack {
+                Image(systemName: "chart.bar.fill")
+                Image(systemName: "alarm")
+                    .padding(.leading, 40)
+                Image(systemName: "house")
+                    .padding(.horizontal, 40)
+                Image(systemName: "lock")
+                    .padding(.trailing, 40)
+                Image(systemName: "person")
+            }
+            .foregroundStyle(Color.white)
+            .font(.system(size: 20))
         }
     }
 }
