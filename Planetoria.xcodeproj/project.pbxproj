@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3C21F8FA2DF0730500B6DF67 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 3C21F8F92DF0730500B6DF67 /* Auth */; };
+		3C21F8FC2DF0730500B6DF67 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 3C21F8FB2DF0730500B6DF67 /* PostgREST */; };
+		3C21F8FE2DF0730500B6DF67 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 3C21F8FD2DF0730500B6DF67 /* Storage */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		3CE1258C2DDB0E74001F65FE /* Planetoria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planetoria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +42,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C21F8FE2DF0730500B6DF67 /* Storage in Frameworks */,
+				3C21F8FC2DF0730500B6DF67 /* PostgREST in Frameworks */,
+				3C21F8FA2DF0730500B6DF67 /* Auth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +87,9 @@
 			);
 			name = Planetoria;
 			packageProductDependencies = (
+				3C21F8F92DF0730500B6DF67 /* Auth */,
+				3C21F8FB2DF0730500B6DF67 /* PostgREST */,
+				3C21F8FD2DF0730500B6DF67 /* Storage */,
 			);
 			productName = Planetoria;
 			productReference = 3CE1258C2DDB0E74001F65FE /* Planetoria.app */;
@@ -107,6 +119,9 @@
 			);
 			mainGroup = 3CE125832DDB0E74001F65FE;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				3C21F8F82DF0730500B6DF67 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3CE1258D2DDB0E74001F65FE /* Products */;
 			projectDirPath = "";
@@ -343,6 +358,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3C21F8F82DF0730500B6DF67 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3C21F8F92DF0730500B6DF67 /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C21F8F82DF0730500B6DF67 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+		3C21F8FB2DF0730500B6DF67 /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C21F8F82DF0730500B6DF67 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		3C21F8FD2DF0730500B6DF67 /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C21F8F82DF0730500B6DF67 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Storage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3CE125842DDB0E74001F65FE /* Project object */;
 }
