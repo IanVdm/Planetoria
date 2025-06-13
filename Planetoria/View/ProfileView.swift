@@ -15,6 +15,7 @@ struct ProfileView: View {
     @State private var isEditing = false
     
     var body: some View {
+        
         VStack {
             // User profile
             Image(systemName: "person")

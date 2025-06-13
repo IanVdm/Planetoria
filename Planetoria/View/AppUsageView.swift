@@ -80,7 +80,7 @@ struct AppUsageView: View {
             // Filter section
             HStack(spacing: 40) {
                 ForEach(filters, id: \.self) { filter in
-                    UsageFilterButton(
+                    FilterButton(
                         title: filter,
                         isSelected: selectedFilter == filter,
                         action: {
@@ -90,6 +90,7 @@ struct AppUsageView: View {
                     .padding(.horizontal)
                 }
             }
+            .padding()
             
             // App usage list section
             HStack {

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UsageFilterButton: View {
+struct FilterButton: View {
     let title: String
     let isSelected: Bool
     let action: () -> Void
@@ -29,5 +29,5 @@ struct UsageFilterButton: View {
 }
 
 #Preview {
-    UsageFilterButton(title: "Instagram", isSelected: true, action: {})
+    FilterButton(title: "Instagram", isSelected: true, action: {})
 }
