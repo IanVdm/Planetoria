@@ -25,7 +25,7 @@ struct ContentView: View {
                 case .blacklist:
                     TimerView()
                 case .profile:
-                    TimerView()
+                    ProfileView()
                 }
             }
             .frame(maxHeight: .infinity)

@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State private var username = ""
-    @State private var email = ""
-    @State private var password = ""
+    @State private var username = "Bob Joans"
+    @State private var email = "Bob@gmail.com"
+    @State private var password = "1234567890"
+    
+    @State private var isEditing = false
     
     var body: some View {
         VStack {
@@ -30,9 +32,9 @@ struct ProfileView: View {
                 .padding(.bottom, 20)
             
             Button(action: {
-                // Execute user profile edititng
+                isEditing.toggle()
             }, label: {
-                Text("Edit Profile")
+                Text(isEditing ? "Done" : "Edit Profile")
                     .foregroundStyle(.white)
                     .padding()
                     .frame(width: 120, height: 40)
@@ -40,8 +42,8 @@ struct ProfileView: View {
                     .cornerRadius(20)
             })
         }
+        .padding(.bottom, 40)
         
-        Spacer()
         
         VStack(alignment: .leading) {
             // Username input box
@@ -58,6 +60,8 @@ struct ProfileView: View {
                         .stroke(Color.black, lineWidth: 1)
                 )
                 .padding(.bottom, 10)
+                .disabled(!isEditing)
+                .opacity(isEditing ? 1 : 0.2)
             
             // Email input box
             Text("Email")
@@ -73,6 +77,8 @@ struct ProfileView: View {
                         .stroke(Color.black, lineWidth: 1)
                 )
                 .padding(.bottom, 10)
+                .disabled(!isEditing)
+                .opacity(isEditing ? 1 : 0.2)
             
             // Password input box
             Text("Password")
@@ -88,20 +94,22 @@ struct ProfileView: View {
                         .stroke(Color.black, lineWidth: 1)
                 )
                 .padding(.bottom, 10)
+                .disabled(!isEditing)
+                .opacity(isEditing ? 1 : 0.2)
+            
+            Button(action: {
+                // TODO: Execute user profile edititng
+            }, label: {
+                Text("Log out")
+                    .foregroundStyle(.white)
+                    .padding()
+                    .frame(width: 300, height: 50)
+                    .background(.black)
+                    .cornerRadius(20)
+            })
+            .padding(.top, 20)
         }
-        .padding(.bottom, 20)
-        
-        Button(action: {
-            // Execute user profile edititng
-        }, label: {
-            Text("Log out / Complete")
-                .foregroundStyle(.white)
-                .padding()
-                .frame(width: 300, height: 50)
-                .background(.black)
-                .cornerRadius(20)
-        })
-        
+
         Spacer()
     }
 }
