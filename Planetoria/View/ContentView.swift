@@ -23,7 +23,7 @@ struct ContentView: View {
                 case .home:
                     DiscoveriesView()
                 case .blacklist:
-                    TimerView()
+                    AppBlacklistView()
                 case .profile:
                     ProfileView()
                 }

@@ -18,6 +18,9 @@ struct AppBlacklistView: View {
         "Tik Tok": true,
     ]
     
+    @State private var selectedFilter: String = "Alphabetically"
+    let filters = ["Alphabetically", "Most used"]
+    
     var body: some View {
         VStack {
             Text("Apps")
@@ -41,21 +44,18 @@ struct AppBlacklistView: View {
                 .padding(.horizontal, 20)
                 .padding(.top, 20)
             
-            HStack(spacing: 30) {
-                Button(action: {
-                    // Execute Alphabeticaly filter
-                }, label: {
-                    Text("Alphabeticly")
-                })
-                .buttonStyle(.plain)
-                
-                Button(action: {
-                    // Execute most used filter
-                }, label: {
-                    Text("Most used")
-                })
+            HStack(spacing: 40) {
+                ForEach(filters, id: \.self) { filter in
+                    UsageFilterButton(
+                        title: filter,
+                        isSelected: selectedFilter == filter,
+                        action: {
+                            selectedFilter = filter
+                        }
+                    )
+                    .padding(.horizontal)
+                }
             }
-            .buttonStyle(.plain)
             .padding()
         }
         
@@ -75,7 +75,7 @@ struct AppBlacklistView: View {
                         .padding()
                     
                     Button(action: {
-                        // Execute app settings
+                        // TODO: Execute app settings
                         print("Open settings for \(app)")
                     }, label: {
                         Image(systemName: "gear")
@@ -89,26 +89,6 @@ struct AppBlacklistView: View {
         .navigationTitle("Select Apps")
         
         Spacer()
-        
-        ZStack {
-            Rectangle()
-                .fill(Color.black)
-                .frame(width: 380, height: 70)
-                .cornerRadius(30)
-            
-            HStack {
-                Image(systemName: "chart.bar.fill")
-                Image(systemName: "alarm")
-                    .padding(.leading, 40)
-                Image(systemName: "house")
-                    .padding(.horizontal, 40)
-                Image(systemName: "lock")
-                    .padding(.trailing, 40)
-                Image(systemName: "person")
-            }
-            .foregroundStyle(Color.white)
-            .font(.system(size: 20))
-        }
     }
 }
 
