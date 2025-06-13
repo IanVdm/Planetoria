@@ -73,26 +73,6 @@ struct TimerView: View {
                 })
                 
                 Spacer()
-                
-                ZStack {
-                    Rectangle()
-                        .fill(Color.black)
-                        .frame(width: 380, height: 70)
-                        .cornerRadius(30)
-                    
-                    HStack {
-                        Image(systemName: "chart.bar.fill")
-                        Image(systemName: "alarm")
-                            .padding(.leading, 40)
-                        Image(systemName: "house")
-                            .padding(.horizontal, 40)
-                        Image(systemName: "lock")
-                            .padding(.trailing, 40)
-                        Image(systemName: "person")
-                    }
-                    .foregroundStyle(Color.white)
-                    .font(.system(size: 20))
-                }
             }
         
             if showSettings {

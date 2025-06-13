@@ -8,8 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedTab: NavBar.Tab = .timer
+
     var body: some View {
-        TimerView()
+        VStack(spacing: 0) {
+            Spacer()
+            
+            Group {
+                switch selectedTab {
+                case .appUsage:
+                    AppUsageView()
+                case .timer:
+                    TimerView()
+                case .home:
+                    DiscoveriesView()
+                case .blacklist:
+                    TimerView()
+                case .profile:
+                    TimerView()
+                }
+            }
+            .frame(maxHeight: .infinity)
+            
+            NavBar(selectedTab: $selectedTab)
+                .padding(.bottom, 30)
+        }
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 
