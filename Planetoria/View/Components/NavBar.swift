@@ -18,7 +18,7 @@ struct NavBar: View {
         ZStack {
             Rectangle()
                 .fill(Color.black)
-                .frame(width: 380, height: 70)
+                .frame(width: 410, height: 75)
                 .cornerRadius(30)
             
             HStack(spacing: 40) {

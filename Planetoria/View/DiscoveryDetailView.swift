@@ -81,7 +81,7 @@ struct DiscoveryDetailView: View {
                         .foregroundColor(.white)
                         .cornerRadius(12)
                         .transition(.move(edge: .top).combined(with: .opacity))
-                        .padding(.top, 50)
+                        .padding(.top, 20)
 
                     Spacer()
                 }

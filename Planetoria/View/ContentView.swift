@@ -18,7 +18,6 @@ struct ContentView: View {
                 .frame(maxHeight: .infinity)
 
             NavBar(selectedTab: $selectedTab)
-                .padding(.bottom, 30)
         }
         .edgesIgnoringSafeArea(.bottom)
     }

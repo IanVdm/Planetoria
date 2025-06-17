@@ -110,8 +110,9 @@ struct ProfileView: View {
             })
             .padding(.top, 20)
         }
+        .padding(.bottom, 5)
 
-        Spacer()
+//        Spacer()
     }
 }
 
