@@ -13,7 +13,7 @@ struct DiscoveryItemView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .frame(width: 140, height: 185)
+                .frame(width: 140, height: 220)
                 .cornerRadius(20)
     
             VStack {
@@ -23,8 +23,22 @@ struct DiscoveryItemView: View {
                     .padding()
                 
                 Text(planet.name)
-                   .font(.system(size: 20))
+                   .font(.system(size: 24))
                    .foregroundStyle(.white)
+                   .fontWeight(.bold)
+                   .padding(.bottom, 2)
+                
+                HStack {
+                    Text("ETA:")
+                        .font(.system(size: 16))
+                        .foregroundStyle(.white)
+                        .fontWeight(.semibold)
+                    
+                    Text(planet.formattedTravelTime)
+                        .font(.system(size: 16))
+                        .foregroundStyle(.white)
+                }
+                .padding(.bottom, 5)
             }
         }
     }

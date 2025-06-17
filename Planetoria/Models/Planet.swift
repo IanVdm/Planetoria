@@ -14,8 +14,22 @@ struct Planet: Hashable, Codable, Identifiable {
     var category: String
     var description: String
     var isFavorite: Bool
+    var travelTime: TimeInterval
     
-    private var ImageName: String
+    var isUnlocked: Bool {
+        // TODO: Save is userDefaults or coreData
+        return false
+    }
+    
+    var formattedTravelTime: String {
+       let formatter = DateComponentsFormatter()
+       formatter.allowedUnits = [.hour, .minute, .second]
+       formatter.unitsStyle = .positional
+       formatter.zeroFormattingBehavior = [.pad]
+       return formatter.string(from: travelTime) ?? "0:00"
+    }
+    
+    var ImageName: String
     var image: Image {
         Image(ImageName)
     }
