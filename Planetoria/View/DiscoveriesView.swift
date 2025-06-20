@@ -14,7 +14,6 @@ struct DiscoveriesView: View {
     ]
     
     var body: some View {
-        // TODO: Create Discovery itmes
         NavigationSplitView {
             ScrollView {
                 LazyVGrid(columns: catalogue, spacing: 16) {
@@ -28,6 +27,7 @@ struct DiscoveriesView: View {
                     }
                 }
                 .navigationTitle("Discoveries")
+                .navigationBarTitleDisplayMode(.inline)
                 .padding()
             }
         } detail: {

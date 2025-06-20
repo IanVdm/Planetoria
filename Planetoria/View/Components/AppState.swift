@@ -9,4 +9,9 @@ import Foundation
 
 class AppState: ObservableObject {
     @Published var selectedPlanet: Planet? = nil
+    @Published var planets: [Planet]
+
+    init() {
+        self.planets = load("PlanetData.json")
+    }
 }
