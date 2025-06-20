@@ -15,10 +15,6 @@ struct AppBlacklistSettingsView: View {
     
     var body: some View {
         VStack {
-//            Text("Instagram")
-//                .font(.system(size: 40))
-//                .padding()
-            
             HStack {
                 Toggle("Enable Timer", isOn: $isTimer)
                     .padding(.horizontal, 50)
