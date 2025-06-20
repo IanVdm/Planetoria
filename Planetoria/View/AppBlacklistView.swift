@@ -18,6 +18,8 @@ struct AppBlacklistView: View {
         "Tik Tok": true,
     ]
     
+    @State private var selectedApp: String? = nil
+    
     @State private var selectedFilter: String = "Alphabetically"
     let filters = ["Alphabetically", "Most used"]
     
@@ -60,6 +62,16 @@ struct AppBlacklistView: View {
                 .padding()
             }
             
+            NavigationLink(
+                destination: AppBlacklistSettingsView(appName: selectedApp ?? ""),
+                tag: selectedApp ?? "",
+                selection: $selectedApp
+            ) {
+                EmptyView()
+            }
+            .hidden()
+
+            
             List {
                 ForEach(appSelection.keys.sorted(), id: \.self) { app in
                     HStack {
@@ -77,6 +89,7 @@ struct AppBlacklistView: View {
                         
                         Button(action: {
                             // TODO: Execute app settings
+                            selectedApp = app
                             print("Open settings for \(app)")
                         }, label: {
                             Image(systemName: "gear")

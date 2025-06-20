@@ -11,61 +11,67 @@ struct AppBlacklistSettingsView: View {
     @State private var isTimer: Bool = false
     @State private var isRepeat: Bool = false
     
+    let appName: String
+    
     var body: some View {
         VStack {
-            Text("Instagram")
-                .font(.system(size: 40))
-                .padding()
+//            Text("Instagram")
+//                .font(.system(size: 40))
+//                .padding()
             
             HStack {
-                Toggle("Timers", isOn: $isTimer)
+                Toggle("Enable Timer", isOn: $isTimer)
                     .padding(.horizontal, 50)
                     .tint(.black)
             }
             .padding(.vertical, 20)
             
-            ZStack {
-                Rectangle()
-                    .frame(width: 302, height: 120)
-                    .foregroundStyle(.white)
-                    .cornerRadius(20)
-                    .shadow(color: .black.opacity(0.3), radius: 10, x: 5, y: 5)
-                
-                VStack {
-                    Text("Set Start time")
-                        .padding(.bottom, 1)
-                    HStack {
-                        Text("11:00")
-                            .font(.system(size: 40))
-                        Text("am")
-                    }
-                }
-            }
+            TimeSelector()
+                .padding(.bottom, 20)
             
-            ZStack {
-                Rectangle()
-                    .frame(width: 302, height: 120)
-                    .foregroundStyle(.white)
-                    .cornerRadius(20)
-                    .shadow(color: .black.opacity(0.3), radius: 10, x: 5, y: 5)
-                
-                VStack {
-                    Text("Set end time")
-                        .padding(.bottom, 1)
-                    HStack {
-                        Text("17:00")
-                            .font(.system(size: 40))
-                        Text("pm")
-                    }
-                }
-            }
-            .padding(.bottom, 50)
+//            ZStack {
+//                Rectangle()
+//                    .frame(width: 320, height: 120)
+//                    .foregroundStyle(.white)
+//                    .cornerRadius(20)
+//                    .shadow(color: .black.opacity(0.3), radius: 10, x: 5, y: 5)
+//                
+//                VStack {
+//                    Text("Set Start time")
+//                        .padding(.bottom, 1)
+//                    HStack {
+//                        Text("11:00")
+//                            .font(.system(size: 40))
+//                        Text("am")
+//                    }
+//                }
+//            }
+//            .padding(.bottom, 30)
+//            
+//            ZStack {
+//                Rectangle()
+//                    .frame(width: 320, height: 120)
+//                    .foregroundStyle(.white)
+//                    .cornerRadius(20)
+//                    .shadow(color: .black.opacity(0.3), radius: 10, x: 5, y: 5)
+//                
+//                VStack {
+//                    Text("Set end time")
+//                        .padding(.bottom, 1)
+//                    HStack {
+//                        Text("17:00")
+//                            .font(.system(size: 40))
+//                        Text("pm")
+//                    }
+//                }
+//            }
+//            .padding(.bottom, 40)
             
             Toggle("Repeat", isOn: $isRepeat)
                 .padding(.horizontal, 50)
                 .tint(.black)
             
-            HStack {
+            HStack(spacing: 20) {
                 Button(action: {
                     // Set timer for Monday
                 }, label: {
@@ -111,31 +117,13 @@ struct AppBlacklistSettingsView: View {
             .padding()
             .buttonStyle(.plain)
         }
+        .navigationTitle(appName)
+        .navigationBarTitleDisplayMode(.inline)
         
         Spacer()
-        
-        ZStack {
-            Rectangle()
-                .fill(Color.black)
-                .frame(width: 380, height: 70)
-                .cornerRadius(30)
-            
-            HStack {
-                Image(systemName: "chart.bar.fill")
-                Image(systemName: "alarm")
-                    .padding(.leading, 40)
-                Image(systemName: "house")
-                    .padding(.horizontal, 40)
-                Image(systemName: "lock")
-                    .padding(.trailing, 40)
-                Image(systemName: "person")
-            }
-            .foregroundStyle(Color.white)
-            .font(.system(size: 20))
-        }
     }
 }
 
 #Preview {
-    AppBlacklistSettingsView()
+    AppBlacklistSettingsView(appName: "Instagram")
 }
